@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.15.0rc0"
+pants_version = "2.16.0.dev5"
 
 backend_packages = [
   'pants.backend.python',
@@ -49,5 +49,13 @@ config = ".mypy.ini"
 
 # Let's be a good OSS citizen!
 [anonymous-telemetry]
-enabled = true
+enabled = false
 repo_id = "a20f5ec5-297a-4ed3-9cc2-ea96a5224015"
+
+[environments-preview.names]
+dev = "//:dev_docker"
+
+[test]
+extra_env_vars = [
+  "ENV_TOML=toml", "ENV_ALL=toml"
+]
